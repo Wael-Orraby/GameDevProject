@@ -1,0 +1,48 @@
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.deps.json
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.AssemblyReference.cache
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfoInputs.cache
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfo.cs
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.CoreCompileInputs.cache
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\refint\Platformer2D.Core.dll
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\Source\Repos\MonoGame.Samples\Platformer2D\Platformer2D.Core\obj\Debug\net6.0\ref\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.deps.json
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.AssemblyReference.cache
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfoInputs.cache
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfo.cs
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.CoreCompileInputs.cache
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\refint\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie\Platformer2D.Core\obj\Debug\net6.0\ref\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.deps.json
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.AssemblyReference.cache
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfoInputs.cache
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfo.cs
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.CoreCompileInputs.cache
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\refint\Platformer2D.Core.dll
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\source\repos\MonoGame.Samples\Platformer2D - kopie - kopie\Platformer2D.Core\obj\Debug\net6.0\ref\Platformer2D.Core.dll
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.deps.json
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\bin\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.AssemblyReference.cache
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfoInputs.cache
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.AssemblyInfo.cs
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.csproj.CoreCompileInputs.cache
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.dll
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\refint\Platformer2D.Core.dll
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\Platformer2D.Core.pdb
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\Platformer2D.Core\obj\Debug\net6.0\ref\Platformer2D.Core.dll

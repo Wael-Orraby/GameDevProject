@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6+H2fafIW0BjW+NI5fR14w3OFFK+hn9/IsMLBjYzfUp1ylLN8z5H3UAZQuwnQl2gWUzgcop07116wHvPk7kSCw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\waelo\\OneDrive - AP Hogeschool Antwerpen\\Ap_Hogeschool\\23-24\\23-24 Semester 1\\Game development\\GameDevProject\\Platformer2D.Core\\Platformer2D.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\waelo\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}
