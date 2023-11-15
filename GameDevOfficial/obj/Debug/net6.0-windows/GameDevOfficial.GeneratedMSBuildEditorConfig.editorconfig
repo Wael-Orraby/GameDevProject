@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GameDevOfficial
-build_property.ProjectDir = C:\Users\mairo\source\repos\GameDevOfficial\GameDevOfficial\
+build_property.ProjectDir = C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\GameDevOfficial\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
