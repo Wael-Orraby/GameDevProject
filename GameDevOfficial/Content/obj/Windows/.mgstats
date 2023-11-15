@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/mairo/source/repos/GameDevOfficial/GameDevOfficial/Content/Gem.png","C:/Users/mairo/source/repos/GameDevOfficial/GameDevOfficial/Content/bin/Windows/Gem.xnb","TextureProcessor","Texture2DContent",3892,4181,0,1121086
+"C:/Users/mairo/source/repos/GameDevOfficial/GameDevOfficial/Content/HealthUI.png","C:/Users/mairo/source/repos/GameDevOfficial/GameDevOfficial/Content/bin/Windows/HealthUI.xnb","TextureProcessor","Texture2DContent",1659,10249,0,0031153
