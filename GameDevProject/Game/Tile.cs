@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Platformer2D
+namespace GameDevProject.Game
 {
 
     /// deze enum bepaald of een blokje collision moet hebben ofniet
@@ -23,7 +23,7 @@ namespace Platformer2D
     /// <summary>
     /// deze klas bepaald het gedrag van een blokje het gedrag van een blokje
     /// </summary>
-    struct Tile
+    public struct Tile
     {
         public Texture2D Texture;
         public TileCollision Collision;
