@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NHffUh/Dm4q8Qqr7Ndo5GGXdn6Z0iQgm7QKam+6KOvz6+6Co0Cn46P8D66KxOFXoZvVJ45ubxtVMIt+z+Cey5w==",
+  "dgSpecHash": "kVTbBfjLw4zGes0kb/PVX1IgCcvB6LXB/wY5cP2fevMb5WBhBO57rNHMS6wn85/OdamokN8To/M1htBPNIQVqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mairo\\source\\repos\\Project2Git\\GameDevProject\\GameDevProject.csproj",
+  "projectFilePath": "C:\\Users\\mairo\\Source\\Repos\\fingam\\GameDevProject\\GameDevProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mairo\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\mairo\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
