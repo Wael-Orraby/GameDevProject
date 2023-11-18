@@ -6,7 +6,7 @@ namespace GameDevProject.Game
 {
 
     /// deze enum bepaald of een blokje collision moet hebben ofniet
-    enum TileCollision
+   public enum TileCollision
     {
         /// dit is een doorzichtige blokje waar je door heen kunt lopen
         Passable = 0,
