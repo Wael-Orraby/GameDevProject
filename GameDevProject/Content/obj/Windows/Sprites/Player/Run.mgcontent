@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/GameDevProject/Content/Sprites/Player/Run.png</SourceFile>
+  <SourceFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sprites/Player/Run.png</SourceFile>
   <SourceTime>2023-11-11T12:02:49.1213493+01:00</SourceTime>
-  <DestFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/GameDevProject/Content/bin/Windows/Sprites/Player/Run.xnb</DestFile>
-  <DestTime>2023-11-16T20:40:31.4078718+01:00</DestTime>
+  <DestFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Sprites/Player/Run.xnb</DestFile>
+  <DestTime>2023-11-18T16:42:03.6422323+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

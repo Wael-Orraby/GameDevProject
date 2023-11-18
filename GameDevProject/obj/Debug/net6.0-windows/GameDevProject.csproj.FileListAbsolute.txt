@@ -170,3 +170,4 @@ C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Seme
 C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\GameDevProject\obj\Debug\net6.0-windows\GameDevProject.pdb
 C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\GameDevProject\obj\Debug\net6.0-windows\GameDevProject.genruntimeconfig.cache
 C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\GameDevProject\obj\Debug\net6.0-windows\ref\GameDevProject.dll
+C:\Users\waelo\OneDrive - AP Hogeschool Antwerpen\Ap_Hogeschool\23-24\23-24 Semester 1\Game development\GameDevProject\GameDevProject\bin\Debug\net6.0-windows\Content\Buttons\StartButtonImage.xnb

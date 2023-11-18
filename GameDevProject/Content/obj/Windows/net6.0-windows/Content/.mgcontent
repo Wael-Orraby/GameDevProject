@@ -13,6 +13,7 @@
     <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Backgrounds/Layer2_0.png</File>
     <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Backgrounds/Layer2_1.png</File>
     <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Backgrounds/Layer2_2.png</File>
+    <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Buttons/StartButtonImage.png</File>
     <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Fonts/Hud.spritefont</File>
     <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Overlays/you_died.png</File>
     <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Overlays/you_lose.png</File>
@@ -53,6 +54,7 @@
     <File>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Tiles/Platform.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
