@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
   <SourceFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sounds/Music.wma</SourceFile>
   <SourceTime>2023-11-11T12:02:49.1057229+01:00</SourceTime>
   <DestFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Content/Sounds/Music.xnb</DestFile>
   <DestTime>2023-11-18T20:21:51.8951796+01:00</DestTime>
+=======
+  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sounds/Music.wma</SourceFile>
+  <SourceTime>2023-11-11T12:02:49+01:00</SourceTime>
+  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Content/Sounds/Music.xnb</DestFile>
+  <DestTime>2023-11-17T14:20:59.0742254+01:00</DestTime>
+>>>>>>> WorkingOnPlayer
   <Importer>WmaImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +22,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Content/Sounds/Music.wma</string>
+    <string>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Content/Sounds/Music.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

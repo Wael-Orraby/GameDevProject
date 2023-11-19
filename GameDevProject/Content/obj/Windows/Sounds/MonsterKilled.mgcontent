@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
   <SourceFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sounds/MonsterKilled.wav</SourceFile>
   <SourceTime>2023-11-11T12:02:49.0900981+01:00</SourceTime>
   <DestFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Sounds/MonsterKilled.xnb</DestFile>
   <DestTime>2023-11-18T16:42:02.2215303+01:00</DestTime>
+=======
+  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sounds/MonsterKilled.wav</SourceFile>
+  <SourceTime>2023-11-11T12:02:49+01:00</SourceTime>
+  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Sounds/MonsterKilled.xnb</DestFile>
+  <DestTime>2023-11-17T14:57:00.8397349+01:00</DestTime>
+>>>>>>> WorkingOnPlayer
   <Importer>WavImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
