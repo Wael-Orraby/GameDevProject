@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< HEAD
   <SourceFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Fonts/Hud.spritefont</SourceFile>
   <SourceTime>2023-11-11T12:02:49.0744732+01:00</SourceTime>
   <DestFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Content/Fonts/Hud.xnb</DestFile>
-  <DestTime>2023-11-18T16:24:36.0979914+01:00</DestTime>
-=======
-  <SourceFile>C:/Users/mairo/source/repos/Project2Git/GameDevProject/Content/Fonts/Hud.spritefont</SourceFile>
-  <SourceTime>2023-11-17T14:23:01.065428+01:00</SourceTime>
-  <DestFile>C:/Users/mairo/source/repos/Project2Git/GameDevProject/Content/bin/Windows/Content/Fonts/Hud.xnb</DestFile>
-  <DestTime>2023-11-17T14:23:17.0661953+01:00</DestTime>
->>>>>>> 14ca890d0de84ab5806dd795454654e2c39bc65b
+  <DestTime>2023-11-18T20:21:42.3133168+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

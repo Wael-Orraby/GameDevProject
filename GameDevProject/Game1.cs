@@ -67,7 +67,7 @@ namespace GameDevProject
             }
             else
             {
-                GraphicsDevice.Clear(Color.Green);
+                isGameStarted = false;
             }
 
             base.Update(gameTime);

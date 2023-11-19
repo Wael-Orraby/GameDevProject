@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< HEAD
   <SourceFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sprites/Player/Celebrate.png</SourceFile>
   <SourceTime>2023-11-11T12:02:49.1213493+01:00</SourceTime>
   <DestFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Content/Sprites/Player/Celebrate.xnb</DestFile>
-  <DestTime>2023-11-18T16:24:38.5983455+01:00</DestTime>
-=======
-  <SourceFile>C:/Users/mairo/source/repos/Project2Git/GameDevProject/Content/Sprites/Player/Celebrate.png</SourceFile>
-  <SourceTime>2023-11-17T14:23:01.1184554+01:00</SourceTime>
-  <DestFile>C:/Users/mairo/source/repos/Project2Git/GameDevProject/Content/bin/Windows/Content/Sprites/Player/Celebrate.xnb</DestFile>
-  <DestTime>2023-11-17T14:23:19.4941655+01:00</DestTime>
->>>>>>> 14ca890d0de84ab5806dd795454654e2c39bc65b
+  <DestTime>2023-11-18T20:21:56.1371837+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
