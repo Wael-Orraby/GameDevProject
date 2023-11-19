@@ -125,13 +125,24 @@ namespace GameDevProject.Game
         public void LoadContent()
         {
             // Laad geanimeerde textures.
-            // !!!!!!!!!!!!!!!!!! Nog te doen !!!!!!!!!!!!!!
+            idleAnimation = new Animation(Level.Content.Load<Texture2D>("Sprites/Player/Idle"), 0.1f, true);
+            runAnimation = new Animation(Level.Content.Load<Texture2D>("Sprites/Player/Run"), 0.1f, true);
+            jumpAnimation = new Animation(Level.Content.Load<Texture2D>("Sprites/Player/Jump"), 0.1f, false);
+            celebrateAnimation = new Animation(Level.Content.Load<Texture2D>("Sprites/Player/Celebrate"), 0.1f, false);
+            dieAnimation = new Animation(Level.Content.Load<Texture2D>("Sprites/Player/Die"), 0.1f, false);
+
 
             // Bereken begrenzingen binnen de grootte van de texture .           
-            // !!!!!!!!!!!!!!!!!!Nog te doen !!!!!!!!!!!!!!
+            int width = (int)(idleAnimation.FrameWidth * 0.4);
+            int left = (idleAnimation.FrameWidth - width) / 2;
+            int height = (int)(idleAnimation.FrameHeight * 0.8);
+            int top = idleAnimation.FrameHeight - height;
+            localBounds = new Rectangle(left, top, width, height);
 
             // Laad geluiden.            
-            // !!!!!!!!!!!!!!!!!! Nog te doen !!!!!!!!!!!!!!
+            killedSound = Level.Content.Load<SoundEffect>("Sounds/PlayerKilled");
+            jumpSound = Level.Content.Load<SoundEffect>("Sounds/PlayerJump");
+            fallSound = Level.Content.Load<SoundEffect>("Sounds/PlayerFall");
         }
 
         /// <summary>
@@ -176,6 +187,246 @@ namespace GameDevProject.Game
             movement = 0.0f;
             isJumping = false;
         }
+
+        /// <summary>
+        /// Haalt horizontale bewegings- en springopdrachten van de speler op vanaf de invoer.
+        /// </summary>
+        private void GetInput(
+            KeyboardState keyboardState,
+            GamePadState gamePadState,
+            AccelerometerState accelState,
+            DisplayOrientation orientation)
+        {
+            // Haal analoge horizontale beweging op.
+            movement = gamePadState.ThumbSticks.Left.X * MoveStickScale;
+
+            // Negeer kleine bewegingen om rennen op dezelfde plek te voorkomen.
+            if (Math.Abs(movement) < 0.5f)
+                movement = 0.0f;
+
+            // Beweeg de speler met de versnellingsmeter.
+            if (Math.Abs(accelState.Acceleration.Y) > 0.10f)
+            {
+                // stel onze bewegingssnelheid in
+                movement = MathHelper.Clamp(-accelState.Acceleration.Y * AccelerometerScale, -1f, 1f);
+
+                // als we in de LandscapeLeft-oriëntatie zijn, moeten we onze beweging omkeren
+                if (orientation == DisplayOrientation.LandscapeRight)
+                    movement = -movement;
+            }
+
+            // Als er enige digitale horizontale bewegingsinvoer is gevonden, overschrijf dan de analoge beweging.
+            if (gamePadState.IsButtonDown(Buttons.DPadLeft) ||
+                keyboardState.IsKeyDown(Keys.Left) ||
+                keyboardState.IsKeyDown(Keys.A))
+            {
+                movement = -1.0f;
+            }
+            else if (gamePadState.IsButtonDown(Buttons.DPadRight) ||
+                     keyboardState.IsKeyDown(Keys.Right) ||
+                     keyboardState.IsKeyDown(Keys.D))
+            {
+                movement = 1.0f;
+            }
+
+            // Controleer of de speler wil springen.
+            isJumping =
+                gamePadState.IsButtonDown(JumpButton) ||
+                keyboardState.IsKeyDown(Keys.Space) ||
+                keyboardState.IsKeyDown(Keys.Up) ||
+                keyboardState.IsKeyDown(Keys.W);
+        }
+
+        /// <summary>
+        /// Update de snelheid en positie van de speler op basis van invoer, zwaartekracht, enz.
+        /// </summary>
+        public void ApplyPhysics(GameTime gameTime)
+        {
+            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            Vector2 previousPosition = Position;
+
+            // Basissnelheid is een combinatie van horizontale bewegingsbesturing en
+            // versnelling naar beneden als gevolg van zwaartekracht.
+            velocity.X += movement * MoveAcceleration * elapsed;
+            velocity.Y = MathHelper.Clamp(velocity.Y + GravityAcceleration * elapsed, -MaxFallSpeed, MaxFallSpeed);
+
+            velocity.Y = DoJump(velocity.Y, gameTime);
+
+            // Pas pseudo-drag horizontaal toe.
+            if (IsOnGround)
+                velocity.X *= GroundDragFactor;
+            else
+                velocity.X *= AirDragFactor;
+
+            // Voorkom dat de speler sneller rent dan zijn topsnelheid.
+            velocity.X = MathHelper.Clamp(velocity.X, -MaxMoveSpeed, MaxMoveSpeed);
+
+            // Pas snelheid toe.
+            Position += velocity * elapsed;
+            Position = new Vector2((float)Math.Round(Position.X), (float)Math.Round(Position.Y));
+
+            // Als de speler nu botst met het level, scheid ze dan.
+            HandleCollisions();
+
+            // Als de botsing ons heeft gestopt met bewegen, zet de snelheid dan terug op nul.
+            if (Position.X == previousPosition.X)
+                velocity.X = 0;
+
+            if (Position.Y == previousPosition.Y)
+                velocity.Y = 0;
+        }
+
+        /// <summary>
+        /// Berekent de Y-snelheid rekening houdend met springen en
+        /// animeert dienovereenkomstig.
+        /// </summary>
+        /// <remarks>
+        /// Tijdens de opkomst van een sprong wordt de Y-snelheid volledig
+        /// overschreven door een krachtcurve. Tijdens de daling neemt de zwaartekracht over.
+        /// De springsnelheid wordt gecontroleerd door het jumpTime-veld
+        /// dat de tijd in de opkomst van de huidige sprong meet.
+        /// </remarks>
+        /// <param name="velocityY">
+        /// De huidige snelheid van de speler langs de Y-as.
+        /// </param>
+        /// <returns>
+        /// Een nieuwe Y-snelheid als begin of voortzetting van een sprong.
+        /// Anders de bestaande Y-snelheid.
+        /// </returns>
+        private float DoJump(float velocityY, GameTime gameTime)
+        {
+            // Als de speler wil springen
+            if (isJumping)
+            {
+                // Begin of zet een sprong voort
+                if ((!wasJumping && IsOnGround) || jumpTime > 0.0f)
+                {
+                    if (jumpTime == 0.0f)
+                        jumpSound.Play();
+
+                    jumpTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    sprite.PlayAnimation(jumpAnimation);
+                }
+
+                // Als we in de opkomst van de sprong zitten
+                if (0.0f < jumpTime && jumpTime <= MaxJumpTime)
+                {
+                    // Overschrijf de verticale snelheid volledig met een krachtcurve die spelers meer controle geeft over de top van de sprong
+                    velocityY = JumpLaunchVelocity * (1.0f - (float)Math.Pow(jumpTime / MaxJumpTime, JumpControlPower));
+                }
+                else
+                {
+                    // Bereikte het hoogtepunt van de sprong
+                    jumpTime = 0.0f;
+                }
+            }
+            else
+            {
+                // Gaat niet springen of annuleert een lopende sprong
+                jumpTime = 0.0f;
+            }
+            wasJumping = isJumping;
+
+            return velocityY;
+        }
+
+        /// <summary>
+        /// Detecteert en lost alle botsingen op tussen de speler en zijn omliggende
+        /// tegels. Wanneer een botsing wordt gedetecteerd, wordt de speler weggeduwd langs één
+        /// as om overlapping te voorkomen. Er is enige speciale logica voor de Y-as om
+        /// platforms af te handelen die zich anders gedragen afhankelijk van de bewegingsrichting.
+        /// </summary>
+        private void HandleCollisions()
+        {
+            // Haal de begrenzingsrechthoek van de speler op en zoek omliggende tegels.
+            Rectangle bounds = BoundingRectangle;
+            int leftTile = (int)Math.Floor((float)bounds.Left / Tile.Width);
+            int rightTile = (int)Math.Ceiling(((float)bounds.Right / Tile.Width)) - 1;
+            int topTile = (int)Math.Floor((float)bounds.Top / Tile.Height);
+            int bottomTile = (int)Math.Ceiling(((float)bounds.Bottom / Tile.Height)) - 1;
+
+            // Reset vlag om te zoeken naar bodembotsingen.
+            isOnGround = false;
+
+            // Voor elke potentieel botsende tegel,
+            for (int y = topTile; y <= bottomTile; ++y)
+            {
+                for (int x = leftTile; x <= rightTile; ++x)
+                {
+                    // Als deze tegel botsbaar is,
+                    TileCollision collision = Level.GetCollision(x, y);
+                    if (collision != TileCollision.Passable)
+                    {
+                        // Bepaal de botsingsdiepte (met richting) en magnitude.
+                        Rectangle tileBounds = Level.GetBounds(x, y);
+                        Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, tileBounds);
+                        if (depth != Vector2.Zero)
+                        {
+                            float absDepthX = Math.Abs(depth.X);
+                            float absDepthY = Math.Abs(depth.Y);
+
+                            // Los de botsing op langs de ondiepe as.
+                            if (absDepthY < absDepthX || collision == TileCollision.Platform)
+                            {
+                                // Als we de bovenkant van een tegel hebben overschreden, staan we op de grond.
+                                if (previousBottom <= tileBounds.Top)
+                                    isOnGround = true;
+
+                                // Negeer platforms, tenzij we op de grond staan.
+                                if (collision == TileCollision.Impassable || IsOnGround)
+                                {
+                                    // Los de botsing op langs de Y-as.
+                                    Position = new Vector2(Position.X, Position.Y + depth.Y);
+
+                                    // Voer verdere botsingen uit met de nieuwe begrenzingen.
+                                    bounds = BoundingRectangle;
+                                }
+                            }
+                            else if (collision == TileCollision.Impassable) // Negeer platforms.
+                            {
+                                // Los de botsing op langs de X-as.
+                                Position = new Vector2(Position.X + depth.X, Position.Y);
+
+                                // Voer verdere botsingen uit met de nieuwe begrenzingen.
+                                bounds = BoundingRectangle;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Sla de nieuwe onderkant van de begrenzingen op.
+            previousBottom = bounds.Bottom;
+        }
+
+        /// <summary>
+        /// Aangeroepen wanneer de speler is gedood.
+        /// </summary>
+        /// <param name="killedBy">
+        /// De vijand die de speler heeft gedood. Deze parameter is null als de speler niet is
+        /// gedood door een vijand (in een gat is gevallen).
+        /// </param>
+        public void OnKilled(Enemy killedBy)
+        {
+            isAlive = false;
+
+            if (killedBy != null)
+                killedSound.Play();
+            else
+                fallSound.Play();
+
+            sprite.PlayAnimation(dieAnimation);
+        }
+
+        /// <summary>
+        /// Aangeroepen wanneer deze speler de uitgang van het level bereikt.
+        /// </summary>
+        public void OnReachedExit()
+        {
+            sprite.PlayAnimation(celebrateAnimation);
+        }
+
 
         /// <summary>
         /// Tekent de geanimeerde speler.
