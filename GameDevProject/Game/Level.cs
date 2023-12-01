@@ -446,5 +446,97 @@ namespace GameDevProject.Game
         }
 
 
+        /// <summary>
+        /// Wordt aangeroepen als je een muntje pakt
+        /// </summary>
+        /// <param name="gem">muntje gepakt.</param>
+        /// <param name="collectedBy">player pakt muntje</param>
+        private void OnGemCollected(Gem gem, Player collectedBy)
+        {
+            score += gem.PointValue;
+
+            gem.OnCollected(collectedBy);
+        }
+
+        /// <summary>
+        /// aangeroepen als speler dood gaat
+        /// </summary>
+        /// <param name="killedBy">
+        /// een enemy die een player killt
+        /// of enemy die door een gat valt
+        /// </param>
+        private void OnPlayerKilled(Enemy killedBy)
+        {
+            Player.OnKilled(killedBy);
+        }
+
+        /// <summary>
+        /// wanneer de speler het exit bordje raakt
+        /// </summary>
+        private void OnExitReached()
+        {
+            Player.OnReachedExit();
+            exitReachedSound.Play();
+            reachedExit = true;
+        }
+
+        /// <summary>
+        /// wanneer die dood gaat start een nieuw leven
+        /// </summary>
+        public void StartNewLife()
+        {
+            Player.Reset(start);
+        }
+
+        #endregion
+
+        #region Draw
+
+        /// <summary>
+        /// teken background en foreground
+        /// </summary>
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            for (int i = 0; i <= EntityLayer; ++i)
+                spriteBatch.Draw(layers[i], Vector2.Zero, Color.White);
+
+            DrawTiles(spriteBatch);
+
+            foreach (Gem gem in gems)
+                gem.Draw(gameTime, spriteBatch);
+
+            Player.Draw(gameTime, spriteBatch);
+
+            foreach (Enemy enemy in enemies)
+                enemy.Draw(gameTime, spriteBatch);
+
+            for (int i = EntityLayer + 1; i < layers.Length; ++i)
+                spriteBatch.Draw(layers[i], Vector2.Zero, Color.White);
+        }
+
+        /// <summary>
+        /// teken alle tegels
+        /// </summary>
+        private void DrawTiles(SpriteBatch spriteBatch)
+        {
+            // For each tile position
+            for (int y = 0; y < Height; ++y)
+            {
+                for (int x = 0; x < Width; ++x)
+                {
+                    // If there is a visible tile in that position
+                    Texture2D texture = tiles[x, y].Texture;
+                    if (texture != null)
+                    {
+                        // Draw it in screen space.
+                        Vector2 position = new Vector2(x, y) * Tile.Size;
+                        spriteBatch.Draw(texture, position, Color.White);
+                    }
+                }
+            }
+        }
+
+        #endregion
+
     }
 }
