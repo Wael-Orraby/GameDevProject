@@ -48,6 +48,7 @@ namespace GameDevProject.Game
 
         public Gem(Level level, Vector2 position)
         {
+
             this.level = level;
             this.basePosition = position;
 
