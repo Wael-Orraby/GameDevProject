@@ -1,99 +1,77 @@
-﻿using GameDevProject.Game.Klas_Screens;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.IO;
+using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Xna.Framework.Content;
+using GameDevProject.Game;
+using Microsoft.Xna.Framework.Media;
+using System;
+using GameDevProject.Game.Klas_Screens;
+using SharpDX.Direct2D1;
 
 namespace GameDevProject
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+// Hulpbronnen voor tekenen.
+ private GraphicsDeviceManager graphics;
+ private Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch;
+ Vector2 baseScreenSize = new Vector2(800, 480);
+ private Matrix globalTransformation;
+ int backbufferWidth, backbufferHeight;
 
-        // Startknop
-        private Texture2D startButtonTexture;
-        private Rectangle startButtonRectangle;
-        private StartScreen startScreen;
-        private bool isGameStarted;
+ // Global content.
+ private SpriteFont hudFont;
 
-        public Game1()
-        {
-            _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-            IsMouseVisible = true;
-        }
+ private Texture2D winOverlay;
+ private Texture2D loseOverlay;
+ private Texture2D diedOverlay;
 
-        protected override void Initialize()
-        {
-            // TODO: Add your initialization logic here
+ // Startknop
+ private Texture2D startButtonTexture;
+ private Rectangle startButtonRectangle;
+ private StartScreen startScreen;
+ private bool isGameStarted;
 
-            base.Initialize();
-            isGameStarted = false;
-        }
+ //start backgroundImage
+ private Texture2D backgroundImage;
 
-        protected override void LoadContent()
-        {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+ // Meta-level game state.
+ private int levelIndex = -1;
+ private Level level;
+ private bool wasContinuePressed;
 
-            // TODO: use this.Content to load your game content here
+// Wanneer de resterende tijd korter is dan de waarschuwingstijd, knippert deze op de hud
+ private static readonly TimeSpan WarningTime = TimeSpan.FromSeconds(30);
 
-            // Startknop
-            int buttonWidth = 250;
-            int buttonHeight = 200;
-            int buttonX = (GraphicsDevice.Viewport.Width - buttonWidth) / 2;
-            int buttonY = (GraphicsDevice.Viewport.Height - buttonHeight) / 2;
-            startButtonTexture = Content.Load<Texture2D>("Buttons/StartButtonImage");
-            startButtonRectangle = new Rectangle(buttonX, buttonY, buttonWidth, buttonHeight);
-            startScreen = new StartScreen(startButtonTexture, startButtonRectangle, null);
-        }
+// We slaan onze invoerstatussen op, zodat we slechts één keer per frame pollen,
+// dan gebruiken we waar nodig dezelfde invoerstatus
+ private GamePadState gamePadState;
+ private KeyboardState keyboardState;
+ private TouchCollection touchState;
+ private AccelerometerState accelerometerState;
 
-        protected override void Update(GameTime gameTime)
-        {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+ private VirtualGamePad virtualGamePad;
 
-            // TODO: Add your update logic here
+  // Het aantal niveaus in de map Niveaus van onze inhoud. We gaan ervan uit dat
+  // niveaus in onze inhoud zijn gebaseerd op 0 en dat alle getallen onder deze constante liggen
+  // Zorg ervoor dat er een niveaubestand aanwezig is. Hierdoor hoeven we niet naar het bestand te zoeken
+  // of uitzonderingen afhandelen, die beide onnodige tijd kunnen toevoegen aan het laden van niveaus.
+ private const int numberOfLevels = 3;
 
-            // Startknop
-            MouseState mouseState = Mouse.GetState();
-            if (!isGameStarted)
-            {
-                if (mouseState.LeftButton == ButtonState.Pressed && startButtonRectangle.Contains(mouseState.Position))
-                {
-                    isGameStarted = true;
-                    GraphicsDevice.Clear(Color.Red);
-                }
-                startScreen.Update(gameTime, mouseState);
-            }
-            else
-            {
-                isGameStarted = false;
-            }
-
-            base.Update(gameTime);
-        }
-
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            _spriteBatch.Begin();
-
-            // TODO: Add your drawing code here
+ public Game1()
+ {
+     graphics = new GraphicsDeviceManager(this);
 
 
-            // Startknop
-            if (!isGameStarted)
-            {
-                startScreen.Draw(_spriteBatch);
-            }
-            else
-            {
-                GraphicsDevice.Clear(Color.Yellow);
-            }
+     graphics.IsFullScreen = false;
 
-            _spriteBatch.End();
+     //graphics.PreferredBackBufferWidth = 800;
+     //graphics.PreferredBackBufferHeight = 480;
+     graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 
-            base.Draw(gameTime);
-        }
+     Accelerometer.Initialize();
+ }
     }
 }
