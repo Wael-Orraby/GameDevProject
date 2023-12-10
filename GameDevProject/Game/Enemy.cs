@@ -94,10 +94,17 @@ namespace GameDevProject.Game
         public void LoadContent(string spriteSet)
         {
             // Laad animaties.
-            // To Do
+            spriteSet = "Sprites/" + spriteSet + "/";
+            runAnimation = new Animation(Level.Content.Load<Texture2D>(spriteSet + "Run"), 0.1f, true);
+            idleAnimation = new Animation(Level.Content.Load<Texture2D>(spriteSet + "Idle"), 0.15f, true);
+            sprite.PlayAnimation(idleAnimation);
 
             // Bereken grenzen binnen texture grootte.
-       	   // To Do
+            int width = (int)(idleAnimation.FrameWidth * 0.35);
+            int left = (idleAnimation.FrameWidth - width) / 2;
+            int height = (int)(idleAnimation.FrameHeight * 0.7);
+            int top = idleAnimation.FrameHeight - height;
+            localBounds = new Rectangle(left, top, width, height);
         }
 
 
@@ -106,19 +113,21 @@ namespace GameDevProject.Game
         /// </summary>
         public void Update(GameTime gameTime)
         {
-            // To Do
+            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // Bereken tegel positie op basis van de kant waar we naartoe lopen.
-          // To Do
+            float posX = Position.X + localBounds.Width / 2 * (int)direction;
+            int tileX = (int)Math.Floor(posX / Tile.Width) - (int)direction;
+            int tileY = (int)Math.Floor(Position.Y / Tile.Height);
 
             if (waitTime > 0)
             {
                 // Wacht gedurende enige tijd.
-                // To Do
+                waitTime = Math.Max(0.0f, waitTime - (float)gameTime.ElapsedGameTime.TotalSeconds);
                 if (waitTime <= 0.0f)
                 {
                     // Draai dan om.
-                    // To Do
+                    direction = (FaceDirection)(-(int)direction);
                 }
             }
             else
@@ -127,12 +136,13 @@ namespace GameDevProject.Game
                 if (Level.GetCollision(tileX + (int)direction, tileY - 1) == TileCollision.Impassable ||
                     Level.GetCollision(tileX + (int)direction, tileY) == TileCollision.Passable)
                 {
-                    // To Do
+                    waitTime = MaxWaitTime;
                 }
                 else
                 {
                     // Beweeg in de huidige richting.
-                    // To Do
+                    Vector2 velocity = new Vector2((int)direction * MoveSpeed * elapsed, 0.0f);
+                    position = position + velocity;
                 }
             }
         }
@@ -148,16 +158,17 @@ namespace GameDevProject.Game
                 Level.TimeRemaining == TimeSpan.Zero ||
                 waitTime > 0)
             {
-                // To Do
+                sprite.PlayAnimation(idleAnimation);
             }
             else
             {
-                // To Do
+                sprite.PlayAnimation(runAnimation);
             }
 
 
             // Tekent met het gezicht in de richting waarin de vijand beweegt.
-            // To Do
+            SpriteEffects flip = direction > 0 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            sprite.Draw(gameTime, spriteBatch, Position, flip);
         }
     }
 }
