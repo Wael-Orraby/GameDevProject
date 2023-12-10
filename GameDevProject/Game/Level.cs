@@ -83,7 +83,7 @@ namespace GameDevProject.Game
             // Maak een nieuwe contentmanager om content te laden die alleen door dit niveau wordt gebruikt.
             content = new ContentManager(serviceProvider, "Content");
 
-            timeRemaining = TimeSpan.FromMinutes(2.0);
+            timeRemaining = TimeSpan.FromMinutes(0.5);
 
             LoadTiles(fileStream);
 
