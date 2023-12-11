@@ -73,5 +73,52 @@ namespace GameDevProject
 
      Accelerometer.Initialize();
  }
+  /// <summary>
+ /// LoadContent wordt één keer per game aangeroepen en is de plek om te laden
+  /// al uw inhoud.
+ /// </summary>
+ protected override void LoadContent()
+ {
+     this.Content.RootDirectory = "Content";
+
+     // Maak een nieuwe SpriteBatch, die kan worden gebruikt om texturen te tekenen.
+     spriteBatch = new Microsoft.Xna.Framework.Graphics.SpriteBatch(GraphicsDevice);
+
+     // laad fonts
+     hudFont = Content.Load<SpriteFont>("Fonts/Hud");
+
+     // laad overlay textures
+     winOverlay = Content.Load<Texture2D>("Overlays/you_win");
+     loseOverlay = Content.Load<Texture2D>("Overlays/you_lose");
+     diedOverlay = Content.Load<Texture2D>("Overlays/you_died");
+
+     ScalePresentationArea();
+
+     virtualGamePad = new VirtualGamePad(baseScreenSize, globalTransformation, Content.Load<Texture2D>("Sprites/VirtualControlArrow"));
+    
+     
+     // Startknop
+     int buttonWidth = 250;
+     int buttonHeight = 200;
+     int buttonX = (GraphicsDevice.Viewport.Width - buttonWidth) / 2;
+     int buttonY = (GraphicsDevice.Viewport.Height - buttonHeight) / 2;
+     startButtonTexture = Content.Load<Texture2D>("Buttons/StartButtonImage");
+     startButtonRectangle = new Rectangle(buttonX, buttonY, buttonWidth, buttonHeight);
+     startScreen = new StartScreen(startButtonTexture, startButtonRectangle, null);
+
+     // Laad de achtergrondafbeelding
+     backgroundImage = Content.Load<Texture2D>("Backgrounds/Layer1_2");
+
+     // Laad music
+     try
+     {
+         MediaPlayer.IsRepeating = true;
+         MediaPlayer.Play(Content.Load<Song>("Sounds/Music"));
+     }
+     catch { }
+
+     LoadNextLevel();
+
+ }
     }
 }
