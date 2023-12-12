@@ -120,5 +120,56 @@ namespace GameDevProject
      LoadNextLevel();
 
  }
+ 
+        public void ScalePresentationArea()
+        {
+            //Bereken hoeveel we nodig hebben om onze afbeeldingen te schalen om het scherm te vullen
+            backbufferWidth = GraphicsDevice.PresentationParameters.BackBufferWidth;
+            backbufferHeight = GraphicsDevice.PresentationParameters.BackBufferHeight;
+            float horScaling = backbufferWidth / baseScreenSize.X;
+            float verScaling = backbufferHeight / baseScreenSize.Y;
+            Vector3 screenScalingFactor = new Vector3(horScaling, verScaling, 1);
+            globalTransformation = Matrix.CreateScale(screenScalingFactor);
+            System.Diagnostics.Debug.WriteLine("Screen Size - Width[" + GraphicsDevice.PresentationParameters.BackBufferWidth + "] Height [" + GraphicsDevice.PresentationParameters.BackBufferHeight + "]");
+        }
+
+
+        /// <summary>
+        /// Hiermee kan het spel logica uitvoeren, zoals het updaten van de wereld,
+         /// controleren op botsingen, input verzamelen en audio afspelen.
+        /// </summary>
+        /// <param name="gameTime">Biedt een momentopname van timingwaarden.</param>
+        protected override void Update(GameTime gameTime)
+        {
+            //Bevestig dat het formaat van het scherm niet door de gebruiker is aangepast
+            if (backbufferHeight != GraphicsDevice.PresentationParameters.BackBufferHeight ||
+                backbufferWidth != GraphicsDevice.PresentationParameters.BackBufferWidth)
+            {
+                ScalePresentationArea();
+            }
+            // Behandel de polling voor onze input en zorg voor input op hoog niveau
+            HandleInput(gameTime);
+
+            // update ons niveau en geef de GameTime door, samen met al onze invoerstatussen
+            level.Update(gameTime, keyboardState, gamePadState,
+                         accelerometerState, Window.CurrentOrientation);
+
+            if (level.Player.Velocity != Vector2.Zero)
+                virtualGamePad.NotifyPlayerIsMoving();
+
+
+            // update startknop
+            MouseState mouseState = Mouse.GetState();
+            if (!isGameStarted)
+            {
+                if (mouseState.LeftButton == ButtonState.Pressed && startButtonRectangle.Contains(mouseState.Position))
+                {
+                    isGameStarted = true;
+                }
+                startScreen.Update(gameTime, mouseState);
+            }
+
+            base.Update(gameTime);
+        }
     }
 }
