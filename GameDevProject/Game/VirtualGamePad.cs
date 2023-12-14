@@ -19,6 +19,7 @@ namespace GameDevProject.Game
         private float secondsSinceLastInput;
         private float opacity;
 
+        // constructor maken voor het gamepad
         public VirtualGamePad(Vector2 baseScreenSize, Matrix globalTransformation, Texture2D texture)
         {
             this.baseScreenSize = baseScreenSize;
@@ -57,14 +58,14 @@ namespace GameDevProject.Game
         /// maakt een gamepadstate aan de hand van de touches die er zijn
         public GamePadState GetState(TouchCollection touchState, GamePadState gpState)
         {
-            //Work out what buttons are pressed based on the touchState
+            //hier kijk je welke button is ingedrukt
             Buttons buttonsPressed = 0;
 
             foreach (var touch in touchState)
             {
                 if (touch.State == TouchLocationState.Moved || touch.State == TouchLocationState.Pressed)
                 {
-                    //Scale the touch position to be in _baseScreenSize coordinates
+                    
                     Vector2 pos = touch.Position;
                     Vector2.Transform(ref pos, ref globalTransformation, out pos);
 
