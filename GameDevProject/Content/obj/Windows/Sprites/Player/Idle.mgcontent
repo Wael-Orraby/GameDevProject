@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<<<<<<< HEAD
-  <SourceFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sprites/Player/Idle.png</SourceFile>
-  <SourceTime>2023-11-11T12:02:49.1213493+01:00</SourceTime>
-  <DestFile>C:/Users/waelo/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Sprites/Player/Idle.xnb</DestFile>
-  <DestTime>2023-11-18T16:42:03.6266076+01:00</DestTime>
-=======
-  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/Sprites/Player/Idle.png</SourceFile>
-  <SourceTime>2023-11-11T12:02:49+01:00</SourceTime>
-  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameDevProject/GameDevProject/Content/bin/Windows/Sprites/Player/Idle.xnb</DestFile>
-  <DestTime>2023-11-17T14:57:02.1270292+01:00</DestTime>
->>>>>>> WorkingOnPlayer
+  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameTest/testGame/Content/Sprites/Player/Idle.png</SourceFile>
+  <SourceTime>2023-11-17T20:46:27+01:00</SourceTime>
+  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameTest/testGame/Content/bin/Windows/Sprites/Player/Idle.xnb</DestFile>
+  <DestTime>2023-11-24T19:57:58.4695103+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
