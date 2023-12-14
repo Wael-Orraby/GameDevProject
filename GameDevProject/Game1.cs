@@ -171,5 +171,64 @@ namespace GameDevProject
 
             base.Update(gameTime);
         }
+
+        
+        private void HandleInput(GameTime gameTime)
+        {
+            // haal al onze invoerstatussen op
+            keyboardState = Keyboard.GetState();
+            touchState = TouchPanel.GetState();
+            gamePadState = virtualGamePad.GetState(touchState, GamePad.GetState(PlayerIndex.One));
+            accelerometerState = Accelerometer.GetState();
+
+
+            bool continuePressed =
+                keyboardState.IsKeyDown(Keys.Space) ||
+                gamePadState.IsButtonDown(Buttons.A) ||
+                touchState.AnyTouch();
+
+            // Voer de juiste actie uit om het spel vooruit te helpen en
+            // om de speler weer aan het spelen te krijgen.
+            if (!wasContinuePressed && continuePressed)
+            {
+                if (!level.Player.IsAlive)
+                {
+                    level.StartNewLife();
+                }
+                else if (level.TimeRemaining == TimeSpan.Zero)
+                {
+                    if (level.ReachedExit)
+                        LoadNextLevel();
+                    else
+                        ReloadCurrentLevel();
+                }
+            }
+
+            wasContinuePressed = continuePressed;
+
+            virtualGamePad.Update(gameTime);
+        }
+
+        private void LoadNextLevel()
+        {
+            // ga naar het volgende niveau
+            levelIndex = (levelIndex + 1) % numberOfLevels;
+
+            // Verwijdert de inhoud van het huidige niveau voordat het volgende wordt geladen.
+            if (level != null)
+                level.Dispose();
+
+            // Laad het niveau.
+            string levelPath = string.Format("Content/Levels/{0}.txt", levelIndex);
+            using (Stream fileStream = TitleContainer.OpenStream(levelPath))
+                level = new Level(Services, fileStream, levelIndex);
+        }
+
+        private void ReloadCurrentLevel()
+        {
+            --levelIndex;
+            LoadNextLevel();
+        }
+
     }
 }
