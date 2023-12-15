@@ -280,13 +280,15 @@ namespace GameDevProject.Game
         /// <summary>
         /// Instantieert een vijand en plaatst hem in het niveau.
         /// </summary>
-        private Tile LoadEnemyTile(int x, int y, string spriteSet)
-        {
-            Vector2 position = RectangleExtensions.GetBottomCenter(GetBounds(x, y));
-            enemies.Add(new Enemy(this, position, spriteSet));
+       private Tile LoadEnemyTile(int x, int y, string spriteSet)
+ {
+     EnemyFactory enemyFactory = new EnemyFactory(this);
+        
+     Vector2 position = RectangleExtensions.GetBottomCenter(GetBounds(x, y));
+     enemies.Add(enemyFactory.CreateEnemy(position, spriteSet)/*new Enemy(this, position, spriteSet)*/);
 
-            return new Tile(null, TileCollision.Passable);
-        }
+     return new Tile(null, TileCollision.Passable);
+ }
 
         /// <summary>
         /// Instantieert een edelsteen en plaatst deze in het niveau.
