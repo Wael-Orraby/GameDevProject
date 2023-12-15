@@ -229,6 +229,100 @@ namespace GameDevProject
             --levelIndex;
             LoadNextLevel();
         }
+        /// <summary>
+        /// Tekent het spel van achtergrond naar voorgrond.
+        /// </summary>
+        /// <param name="gameTime">Biedt een momentopname van timingwaarden.</param>
+protected override void Draw(GameTime gameTime)
+{
+    graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+
+    spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, null, globalTransformation);
+
+    // Startknop
+    if (!isGameStarted)
+    {
+        // Teken de achtergrondafbeelding op het hele scherm
+        spriteBatch.Draw(backgroundImage, GraphicsDevice.Viewport.Bounds, Color.White);
+        startScreen.Draw(spriteBatch);
+        this.IsMouseVisible = true;
+    }
+    else
+    {
+        level.Draw(gameTime, spriteBatch);
+        this.IsMouseVisible = false;
+
+        DrawHud();
+    }
+
+
+
+    spriteBatch.End();
+
+    base.Draw(gameTime);
+}
+
+private void DrawHud()
+{
+    Rectangle titleSafeArea = GraphicsDevice.Viewport.TitleSafeArea;
+    Vector2 hudLocation = new Vector2(titleSafeArea.X, titleSafeArea.Y);
+
+    Vector2 center = new Vector2(baseScreenSize.X / 2, baseScreenSize.Y / 2);
+
+    // Teken de resterende tijd. Gebruikt modulo-deling om knipperen te veroorzaken wanneer de
+     // speler heeft bijna geen tijd meer.
+    string timeString = "TIME: " + level.TimeRemaining.Minutes.ToString("00") + ":" + level.TimeRemaining.Seconds.ToString("00");
+    Color timeColor;
+    if (level.TimeRemaining > WarningTime ||
+        level.ReachedExit ||
+        (int)level.TimeRemaining.TotalSeconds % 2 == 0)
+    {
+        timeColor = Color.White;
+    }
+    else
+    {
+        timeColor = Color.Red;
+    }
+    DrawShadowedString(hudFont, timeString, hudLocation, timeColor);
+
+    // Teken score
+    float timeHeight = hudFont.MeasureString(timeString).Y;
+    DrawShadowedString(hudFont, "SCORE: " + level.Score.ToString(), hudLocation + new Vector2(0.0f, timeHeight * 1.2f), Color.White);
+
+    // Bepaal welk statusoverlaybericht moet worden weergegeven.
+    Texture2D status = null;
+    if (level.TimeRemaining == TimeSpan.Zero)
+    {
+        if (level.ReachedExit)
+        {
+            status = winOverlay;
+        }
+        else
+        {
+            status = loseOverlay;
+        }
+    }
+    else if (!level.Player.IsAlive)
+    {
+        status = diedOverlay;
+    }
+
+    if (status != null)
+    {
+        // Teken status bericht.
+        Vector2 statusSize = new Vector2(status.Width, status.Height);
+        spriteBatch.Draw(status, center - statusSize / 2, Color.White);
+    }
+
+    if (touchState.IsConnected)
+        virtualGamePad.Draw(spriteBatch);
+}
+
+private void DrawShadowedString(SpriteFont font, string value, Vector2 position, Color color)
+{
+    spriteBatch.DrawString(font, value, position + new Vector2(1.0f, 1.0f), Color.Black);
+    spriteBatch.DrawString(font, value, position, color);
+}
 
     }
 }
