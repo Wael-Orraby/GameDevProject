@@ -107,7 +107,7 @@ namespace GameDevProject
      startScreen = new StartScreen(startButtonTexture, startButtonRectangle, null);
 
      // Laad de achtergrondafbeelding
-     backgroundImage = Content.Load<Texture2D>("Backgrounds/Layer1_2");
+     backgroundImage = Content.Load<Texture2D>("Backgrounds/Layer0_2");
 
      // Laad music
      try
