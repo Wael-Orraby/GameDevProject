@@ -22,7 +22,7 @@ namespace GameDevProject.Game.Character
     /// <summary>
     /// Een monster dat de voortgang van onze onverschrokken avonturier belemmert.
     /// </summary>
-    public class Enemy
+    public class Enemy : ICharacter
     {
         public Level Level
         {
