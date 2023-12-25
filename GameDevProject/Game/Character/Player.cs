@@ -13,7 +13,7 @@ using GameDevProject.Game.Mechanics;
 
 namespace GameDevProject.Game.Character
 {
-    public class Player : ICharacter
+    public class Player : IPlayer
     {
         // Animaties
         private Animation idleAnimation;
