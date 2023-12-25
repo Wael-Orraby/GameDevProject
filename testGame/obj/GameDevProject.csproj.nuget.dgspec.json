@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Wael Orraby & Marouane Mairouche Gamedevelopment\\Code\\Code\\testGame\\GameDevProject.csproj": {}
+    "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Code\\testGame\\GameDevProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Wael Orraby & Marouane Mairouche Gamedevelopment\\Code\\Code\\testGame\\GameDevProject.csproj": {
+    "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Code\\testGame\\GameDevProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Wael Orraby & Marouane Mairouche Gamedevelopment\\Code\\Code\\testGame\\GameDevProject.csproj",
+        "projectUniqueName": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Code\\testGame\\GameDevProject.csproj",
         "projectName": "GameDevProject",
-        "projectPath": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Wael Orraby & Marouane Mairouche Gamedevelopment\\Code\\Code\\testGame\\GameDevProject.csproj",
+        "projectPath": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Code\\testGame\\GameDevProject.csproj",
         "packagesPath": "C:\\Users\\waelo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Wael Orraby & Marouane Mairouche Gamedevelopment\\Code\\Code\\testGame\\obj\\",
+        "outputPath": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Code\\testGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\waelo\\AppData\\Roaming\\NuGet\\NuGet.Config",

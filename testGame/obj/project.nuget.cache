@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7Q6FC0PTIuffEpd4p4VQ2a0Na/360vA/XE2iV6C9DNvm911fJyKS6u3s5LVaK8Ay0g2sHqKV9MDUyl+V2cPhSg==",
+  "dgSpecHash": "6w8gS7OXowzL99INoGL5Ha3+0MAMEFmhbC7ro7GV+hvCbgo+9HVNuMx9dEmqNWOKiP/jTG2V2rxvP4Huwltnqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Wael Orraby & Marouane Mairouche Gamedevelopment\\Code\\Code\\testGame\\GameDevProject.csproj",
+  "projectFilePath": "C:\\Users\\waelo\\Desktop\\Nieuwe map\\Code\\testGame\\GameDevProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\waelo\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\waelo\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

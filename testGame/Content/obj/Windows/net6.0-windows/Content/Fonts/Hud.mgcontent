@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameTest/testGame/Content/Fonts/Hud.spritefont</SourceFile>
+  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/Code/testGame/Content/Fonts/Hud.spritefont</SourceFile>
   <SourceTime>2023-12-01T18:07:33+01:00</SourceTime>
-  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameTest/testGame/Content/bin/Windows/Content/Fonts/Hud.xnb</DestFile>
-  <DestTime>2023-12-03T12:41:09.6751578+01:00</DestTime>
+  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/Code/testGame/Content/bin/Windows/Content/Fonts/Hud.xnb</DestFile>
+  <DestTime>2023-12-19T16:01:31.4658565+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameTest/testGame/Content/Sounds/Music.wma</SourceFile>
+  <SourceFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/Code/testGame/Content/Sounds/Music.wma</SourceFile>
   <SourceTime>2023-12-01T18:07:35+01:00</SourceTime>
-  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameTest/testGame/Content/bin/Windows/Content/Sounds/Music.xnb</DestFile>
-  <DestTime>2023-12-03T12:41:11.1515217+01:00</DestTime>
+  <DestFile>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/Code/testGame/Content/bin/Windows/Content/Sounds/Music.xnb</DestFile>
+  <DestTime>2023-12-19T16:01:33.2453848+01:00</DestTime>
   <Importer>WmaImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/GameTest/testGame/Content/bin/Windows/Content/Sounds/Music.wma</string>
+    <string>C:/Users/orrab/OneDrive - AP Hogeschool Antwerpen/Ap_Hogeschool/23-24/23-24 Semester 1/Game development/Code/testGame/Content/bin/Windows/Content/Sounds/Music.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>
